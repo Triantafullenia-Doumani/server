@@ -349,10 +349,11 @@ class Principal implements BackendInterface {
 
 					if (!$allowEnumeration) {
 						if ($allowEnumerationFullMatch) {
+							$lowerSearch = strtolower($value);
 							$users = $this->userManager->searchDisplayName($value, $searchLimit);
-							$users = \array_filter($users, static function (IUser $user) use ($value, $ignoreSecondDisplayName) {
+							$users = \array_filter($users, static function (IUser $user) use ($lowerSearch, $ignoreSecondDisplayName) {
 								$lowerDisplayName = strtolower($user->getDisplayName());
-								return $lowerDisplayName === $value || ($ignoreSecondDisplayName && trim(preg_replace('/ \(.*\)$/', '', $lowerDisplayName)) === $value);
+								return $lowerDisplayName === $lowerSearch || ($ignoreSecondDisplayName && trim(preg_replace('/ \(.*\)$/', '', $lowerDisplayName)) === $lowerSearch);
 							});
 						} else {
 							$users = [];
