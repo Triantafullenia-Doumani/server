@@ -2310,11 +2310,6 @@
       <code>searchCollections</code>
     </UndefinedInterfaceMethod>
   </file>
-  <file src="core/Controller/SvgController.php">
-    <TypeDoesNotContainNull occurrences="1">
-      <code>$svg === null</code>
-    </TypeDoesNotContainNull>
-  </file>
   <file src="core/Controller/UnifiedSearchController.php">
     <NullArgument occurrences="1">
       <code>null</code>
@@ -2988,11 +2983,6 @@
     <UndefinedMethod occurrences="1">
       <code>getShareForToken</code>
     </UndefinedMethod>
-  </file>
-  <file src="lib/private/Encryption/File.php">
-    <InvalidPropertyAssignmentValue occurrences="1">
-      <code>new CappedMemoryCache()</code>
-    </InvalidPropertyAssignmentValue>
   </file>
   <file src="lib/private/Encryption/Keys/Storage.php">
     <InvalidNullableReturnType occurrences="1">
